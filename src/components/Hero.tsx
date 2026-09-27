@@ -1,4 +1,5 @@
 import { wedding } from '../data/wedding'
+import { VerseQuote } from './Verses'
 import { useCountdown, type Countdown } from '../hooks/useCountdown'
 
 const date = new Date(wedding.date)
@@ -17,7 +18,7 @@ function CountdownTimer({ days, hours, minutes, seconds }: Countdown) {
   ] as const
 
   return (
-    <div className="countdown" aria-label="Countdown to the wedding">
+    <div className="countdown" aria-label="Countdown to the Waleema">
       {units.map(([label, value]) => (
         <div key={label}>
           <strong>{pad(value)}</strong>
@@ -34,12 +35,13 @@ export function Hero() {
 
   return (
     <header className="hero">
+      <p className="eyebrow small">In the Name of Allah, the Gracious, the Merciful</p>
       <p className="monogram" aria-hidden="true">
         {groom[0]}
         <span>&amp;</span>
         {bride[0]}
       </p>
-      <p className="eyebrow small">With joyful hearts we invite you to celebrate the wedding of</p>
+      <p className="eyebrow small">With joyful hearts we invite you to celebrate the Waleema of</p>
       <h1 className="names">
         <span>{groom}</span>
         <span className="and">and</span>
@@ -48,6 +50,8 @@ export function Hero() {
       <p className="eyebrow small">
         {groomFullName} &amp; {brideFullName}
       </p>
+
+      <VerseQuote {...wedding.verses.hero} />
 
       <div className="date-row">
         <span className="date-side">{weekday}</span>
@@ -66,7 +70,7 @@ export function Hero() {
       )}
 
       <a className="btn" href="#venue">
-        View wedding details
+        View Waleema details
       </a>
     </header>
   )

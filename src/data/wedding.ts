@@ -19,40 +19,33 @@ export const wedding: Wedding = {
       address: 'Near Britannia Hospital, Community 22',
       gps: 'GB-058-9070',
       time: '3:00 PM',
-      mapsUrl: 'https://maps.app.goo.gl/91z9TUBVs4KFcq9F7',
+      mapsUrl: 'https://maps.google.com/?q=5.717702,-0.027295',
     },
   ],
 
   schedule: [
-    { time: '03:00 PM', title: 'Wedding ceremony' }, // TODO: add the rest of the day
+    { time: '03:00 PM', title: 'Waleema' }, // TODO: add the rest of the day
   ],
 
-  dressCode: {
-    note: 'Colours of the day: ivory, champagne & gold', // TODO confirm
-    gentlemen: 'Formal / Traditional', // TODO confirm
-    ladies: 'Elegant / Traditional', // TODO confirm
-    swatches: ['#f4ede3', '#e6d6c1', '#c9ad8a', '#9a7b5a'],
+  verses: {
+    // Shown under the couple's names at the top
+    hero: { text: 'And We created you in pairs.', source: "Qur'an 78:8" },
+    // Shown mid-page, between the schedule and RSVP
+    middle: { text: 'And live with them in kindness.', source: "An-Nisa 4:19" },
   },
-
-  story: [
-    { title: 'We met', text: 'A short line about how it all began.' }, // TODO
-    { title: 'First date', text: 'Where it went from there.' }, // TODO
-    { title: 'The proposal', text: 'The question, and the yes.' }, // TODO
-    { title: 'Wedding day', text: 'Forever starts here.' },
-  ],
 
   rsvp: {
     deadline: '', // TODO: e.g. "Kindly respond by 20th October" — empty hides it
   },
 
   gifts: {
-    note: 'Your presence is the greatest gift. Should you wish to bless us further:',
-    options: [
-      { label: 'Mobile Money', detail: '0552760549 — Abubakr Mahmood Junior' }, 
-    ],
+    note: 'Your presence is the greatest gift.',
+    options: [],
   },
 
-  photoUploadUrl: '', // TODO: Google Photos / Drive folder link
+  // Google Apps Script web app URL (ends in /exec). Setup steps are in
+  // google-apps-script/Code.gs. Empty hides the upload button.
+  uploadEndpoint: '', // TODO
 
   // Used for RSVP and the help section.
   contacts: [

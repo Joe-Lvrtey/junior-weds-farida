@@ -14,16 +14,9 @@ export interface ScheduleItem {
   title: string
 }
 
-export interface DressCode {
-  note: string
-  gentlemen: string
-  ladies: string
-  swatches: string[]
-}
-
-export interface StoryMoment {
-  title: string
+export interface Verse {
   text: string
+  source: string
 }
 
 export interface Rsvp {
@@ -57,13 +50,12 @@ export interface Wedding {
   hashtag: string
   venues: [Venue, ...Venue[]]
   schedule: ScheduleItem[]
-  dressCode: DressCode
-  story: StoryMoment[]
+  verses: { hero: Verse; middle: Verse }
   rsvp: Rsvp
   /** null hides the gift section entirely */
   gifts: Gifts | null
-  /** Shared album upload link. Empty hides the button. */
-  photoUploadUrl: string
+  /** Apps Script web app URL for guest uploads to Drive. Empty hides the uploader. */
+  uploadEndpoint: string
   contacts: Contact[]
   /** Local or international format. Empty hides the link. */
   whatsapp: string

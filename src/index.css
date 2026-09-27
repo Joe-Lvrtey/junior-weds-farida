@@ -401,60 +401,22 @@ header {
   font-size: 1.2rem;
 }
 
-/* ---------- dress code ---------- */
+/* ---------- verses ---------- */
 
-.dress {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 100%;
-}
-
-.dress > div {
-  padding: 8px;
-}
-
-.dress > div + div {
-  border-left: 1px solid var(--line);
-}
-
-.swatches {
-  display: flex;
-  gap: 10px;
-  margin-top: 8px;
-}
-
-.swatches span {
-  width: 34px;
-  height: 34px;
-  border-radius: 50%;
-  border: 1px solid var(--line);
-  box-shadow: inset 0 2px 6px rgba(255, 255, 255, 0.6);
-}
-
-/* ---------- story ---------- */
-
-.story {
-  list-style: none;
-  padding: 0;
+.verse {
   margin: 0;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8px;
 }
 
-.story li {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.story li + li::before {
-  content: '';
-  display: block;
-  width: 1px;
-  height: 28px;
-  margin: 0 auto 8px;
-  background: var(--line);
+.verse blockquote {
+  margin: 0;
+  font-size: 1.35rem;
+  line-height: 1.5;
+  color: var(--gold-deep);
+  max-width: 28ch;
 }
 
 /* ---------- rsvp / gifts ---------- */
@@ -466,6 +428,94 @@ header {
 
 .gifts p:not(.tag):not(.muted) {
   color: var(--ink);
+}
+
+/* ---------- photo uploads ---------- */
+
+.uploader {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.field {
+  width: 100%;
+  max-width: 320px;
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: rgba(255, 252, 247, 0.8);
+  font: inherit;
+  font-size: 1.05rem;
+  color: var(--ink);
+  text-align: center;
+}
+
+.field:focus-visible {
+  outline: 2px solid var(--gold-deep);
+  outline-offset: 2px;
+}
+
+.uploads {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  display: grid;
+  gap: 8px;
+}
+
+.upload {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 6px 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: rgba(255, 252, 247, 0.6);
+  text-align: left;
+}
+
+.upload-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.upload-retry {
+  border: 0;
+  background: none;
+  padding: 4px 0;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.upload.error .upload-name,
+.upload.error .upload-retry {
+  color: #a0523d;
+}
+
+.upload-bar {
+  grid-column: 1 / -1;
+  height: 3px;
+  border-radius: 3px;
+  background: var(--line);
+  overflow: hidden;
+}
+
+.upload-bar span {
+  display: block;
+  height: 100%;
+  background: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.upload.done .upload-bar {
+  display: none;
 }
 
 /* ---------- help ---------- */
